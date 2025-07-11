@@ -1,0 +1,42 @@
+.about-us-container {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('../images/women-clothes.jpg'); /* مطمئن شو مسیر عکس درسته */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.about-us-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(6px);
+  background-color: rgba(234, 203, 131, 0.3); /* لایه روشن برای خوانایی متن */
+  z-index: 0;
+}
+
+.about-us-content {
+  position: relative;
+  z-index: 1;
+  padding: 3rem;
+  max-width: 800px;
+  margin: 10rem 10rem;
+  text-align: center;
+  color: #2b1800;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgb(48, 3, 3);
+}
+
+.about-us-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-us-content p {
+  font-size: 1.1rem;
+  line-height: 2;
+}

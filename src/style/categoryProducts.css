@@ -1,0 +1,32 @@
+.category-products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: burlywood;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.category-products-container div {
+  width: 280px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: burlywood;
+  box-shadow: 0 4px 12px rgb(69, 4, 4);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+
+.category-products-container :hover{
+  transform: translateY(-5px);
+}
+
+
+.category-products-container img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}

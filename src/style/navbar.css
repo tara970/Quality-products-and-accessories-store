@@ -1,0 +1,26 @@
+.navbar-container{
+  max-width: 1250px;
+  background-color: burlywood;
+  margin: 0 auto;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;  /* ✅ مقدار درست */
+  gap: 4rem;
+  margin-right: 5rem;
+}
+
+.navbar a {
+  color: rgb(54, 35, 7);
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s;
+  text-decoration: none;
+  margin-top: 2rem;
+}
+
+.navbar a:hover {
+  color: rgb(117, 77, 29);
+}

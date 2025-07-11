@@ -1,0 +1,80 @@
+.wave-container {
+  padding: 1rem;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  width: 96vw;
+  position: absolute;
+  margin-top: 27rem;
+}
+
+
+.daste{
+position: absolute;
+margin-left: 60rem;
+margin-top: 3rem;
+font-size: 2rem;
+color: burlywood;
+}
+
+
+.top,
+.bottom {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none; 
+  width: 91.5vw;
+  margin-left: 0.3rem;
+}
+
+.top {
+  top: -2rem;
+}
+
+.bottom {
+  bottom: -9.5rem;
+}
+
+
+.nav {
+  display: flex;
+  gap: 6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.nav span{
+  width: 7rem;
+  height: 1.5rem;
+  background-color: burlywood;
+  position: absolute;
+  margin-left: -8.75rem;
+  margin-top: 18rem;
+  border-radius: 25px;
+  box-shadow: 3px 5px 15px rgb(55, 35, 9);
+}
+
+.nav a {
+  text-align: center;
+  color: rgb(54, 34, 8);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.nav img {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: none;
+  object-fit: cover;
+  margin-top: 10rem;
+}
+
+.nav img {
+  transition: transform 0.3s ease;
+}
+
+.nav img:hover {
+  transform: scale(1.1);
+}

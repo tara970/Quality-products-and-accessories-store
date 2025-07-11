@@ -1,0 +1,89 @@
+.sale-container{
+    max-width: 1250px;
+    margin: 0 auto;
+    background-color: burlywood;
+    margin-top: -8rem;
+    height: 40vh;
+}
+
+.special{
+    width: 1150px;
+    height: 15rem;
+    background-color: #2b1700;
+    margin-left: 3rem;
+    border-radius: 25px;
+}
+
+.special .image{
+   position: absolute;
+   margin-top: 0rem;
+   margin-left: 49rem;
+}
+
+.image{
+    width: 23rem;
+    height: 14.9rem;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.special h3{
+    color: burlywood;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 22rem;
+    position: absolute;
+    margin-top: 3rem;
+}
+
+
+.special p{
+    color: burlywood;
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    margin-left: 28rem;
+    margin-top: 7rem;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 5rem;
+  margin-left: 1rem;
+  position: absolute;
+  direction: rtl;
+}
+
+.countdown-item {
+  background-color: burlywood;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgb(54, 4, 4);
+  min-width: 20px;
+  height: 10rem;
+  margin-top: -3.5rem;
+  text-align: center;
+  font-weight: bold;
+  color: #2b1700;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.countdown-item:hover {
+  transform: scale(1.1);
+}
+
+.countdown-item-label {
+  font-size: 0.8rem;
+  color: #555;
+  position: absolute;
+  margin-top: 4rem;
+}
+
+.sale-container .expired{
+  position: absolute;
+  margin-top: 10rem;
+  margin-left: 3rem;
+}

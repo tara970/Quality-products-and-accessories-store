@@ -1,0 +1,83 @@
+.best-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  background-color: burlywood;
+  padding: 8rem 0;
+}
+
+.bsetproduct {
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 3rem auto;
+  width: 95%;
+  direction: rtl;
+  margin-top: 15rem;
+}
+
+.bsetproduct h1 {
+  text-align: start;
+  color: #2b1800;
+  font-size: 2rem;
+  margin-top: 15rem;
+}
+
+.bsetproduct-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* کارت محصول */
+.bsetproduct-card {
+  background-color: burlywood;
+  margin-top: 2rem;
+  border-radius: 16px;
+  padding: 1rem;
+  width: 200px;
+  box-shadow: 0 4px 10px rgb(69, 3, 3);
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.bsetproduct-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-link img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 12px;
+}
+
+.product-link p {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  color: #2b1800;
+}
+
+/* آیکون سبد خرید */
+.cart-icon-wrapper {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  color: #2b1800;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: red;
+  margin-left: 8px;
+}
+
+.discounted-price {
+  color: green;
+  font-weight: bold;
+}

@@ -1,0 +1,65 @@
+.search {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  direction: rtl;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+  background-color: burlywood;
+}
+
+.card {
+  background-color: #fff;
+  width: 900px;
+  height: 20rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin-right: 9rem;
+  margin-top: 5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1rem;
+  color: #2b1800;
+  margin: 0.5rem 0;
+}
+
+.card h4 {
+  font-size: 1.1rem;
+  color: #2b1800;
+  margin: 0.4rem 0;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #2b1800;
+  height: 60px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+.card .prc {
+  font-weight: bold;
+  color: #2b1800;
+  margin-top: 0.8rem;
+}
+
+.cart-product {
+  margin-right: 27rem;
+}

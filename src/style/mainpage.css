@@ -1,0 +1,38 @@
+.main-page-container {
+  padding: 2rem;
+  max-width: 850px;
+  margin: auto;
+  background-color: burlywood;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgb(61, 3, 3);
+  font-family: 'Vazirmatn', sans-serif;
+  direction: rtl;
+  line-height: 2.2;
+  color: #2b1700;
+}
+
+.main-page-container h1 {
+  color: #2b1800;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.main-page-container h2 {
+  color: #2b1800;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+}
+
+.main-page-container p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.main-page-container ul {
+  padding-right: 1.5rem;
+}
+
+.main-page-container li {
+  margin: 0.7rem 0;
+}

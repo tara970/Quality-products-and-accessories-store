@@ -1,0 +1,50 @@
+.container{
+    background-color: burlywood;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+.my-select-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: burlywood;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgb(57, 2, 2);
+  text-align: center;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+.my-select-container img {
+  width: 200px;
+  height: 240px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.my-select-container h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.my-select-container p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.my-select-container h4 {
+  font-size: 1.2rem;
+  color: #d35400;
+  font-weight: bold;
+}
+
+.icon{
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: start;
+  color: #2b1800;
+}
