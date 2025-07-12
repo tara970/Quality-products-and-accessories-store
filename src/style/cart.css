@@ -111,7 +111,7 @@
 }
 
 .pending-label {
-  color: orange;
+  color: rgba(249, 41, 0, 0.748);
   font-weight: bold;
   margin-top: 5px;
   display: inline-block;

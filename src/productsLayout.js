@@ -9,6 +9,7 @@ import AboutUs from "./navbar pages/about-us";
 import ContactUs from "./navbar pages/contact-us";
 import Navigation from "./navbar pages/navigation";
 import Navbar from "./navbar pages/navbar";
+import CartShope from "./navbar pages/cartshope";
 
 const ProductsLayout = () => {
   return (
@@ -24,6 +25,7 @@ const ProductsLayout = () => {
         <Route path="contact-us" element={<ContactUs />} />
         <Route path="search/:query" element={<SearchProduct />} />
         <Route path="category/:categoryName" element={<CategoryProducts />} />
+        <Route path="cartshope" element={<CartShope/>} />
       </Routes>
     </>
   );
