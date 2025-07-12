@@ -14,6 +14,7 @@ function Navbar() {
         <Link to="/products/all-products">AllProducts</Link>
         <Link to="/products/about-us">AboutUs</Link>
         <Link to="/products/contact-us">ContactUs</Link>
+        <Link to="/products/cartshope">CartShope</Link>
       </div>
     </div>
   );
