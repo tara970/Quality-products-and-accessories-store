@@ -1,6 +1,7 @@
 .search {
   max-width: 1200px;
   margin: 0 auto;
+  min-height: 90vh;
   padding: 2rem;
   direction: rtl;
   display: grid;
@@ -10,11 +11,11 @@
 }
 
 .card {
-  background-color: #fff;
+  background-color: burlywood;
   width: 900px;
   height: 20rem;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgb(58, 5, 5);
   overflow: hidden;
   padding: 1.5rem;
   text-align: center;
