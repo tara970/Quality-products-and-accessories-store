@@ -1,5 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { ProductContext } from "../component/productContext";
+import { Link } from "react-router-dom";
 import "../style/cart.css";
 
 function CartShope() {
@@ -9,51 +10,14 @@ function CartShope() {
     updateCartQuantity,
     clearCart,
     getTotalPrice,
+    orders,
+    placeOrder,
   } = useContext(ProductContext);
 
-  const [orders, setOrders] = useState(() => {
-    const saved = localStorage.getItem("orders");
-    return saved ? JSON.parse(saved) : [];
-  });
-
-  // ⏰ ذخیره سفارش‌ها در localStorage
-  useEffect(() => {
-    localStorage.setItem("orders", JSON.stringify(orders));
-  }, [orders]);
-
-  // ✅ ثبت سفارش و محاسبه زمان تحویل
-  const submitOrder = () => {
-    const deliveryDays = 3; // مثلاً تحویل ۳ روزه
-    const now = new Date();
-    const deliveryDate = new Date(now);
-    deliveryDate.setDate(now.getDate() + deliveryDays);
-
-    const submitted = cart.map((item) => ({
-      ...item,
-      deliveredAt: deliveryDate.toISOString(), // زمان تحویل
-    }));
-
-    setOrders((prev) => [...prev, ...submitted]);
-    clearCart();
-  };
-
-  // 🔍 بررسی تحویل شدن هر محصول
-  const isDelivered = (product) => {
-    const now = new Date();
-    const deliveryDate = new Date(product.deliveredAt);
-    return now >= deliveryDate;
-  };
-
-  // ⏳ چند روز باقی مانده؟
-  const getRemainingDays = (product) => {
-    const now = new Date();
-    const deliveryDate = new Date(product.deliveredAt);
-    const diff = Math.ceil((deliveryDate - now) / (1000 * 60 * 60 * 24));
-    return diff;
-  };
+  
 
   return (
-    <div className="container">
+    <div className="my-container">
       <div className="cart-container">
         <h2>سبد خرید</h2>
 
@@ -61,7 +25,7 @@ function CartShope() {
           <p className="empty">سبد خرید شما خالی است.</p>
         )}
 
-        {/* سبد خرید */}
+        {/* ✅ نمایش سبد خرید */}
         {cart.map((item) => (
           <div className="cart-item" key={item.id}>
             <img src={item.image} alt={item.title} />
@@ -88,36 +52,10 @@ function CartShope() {
             </div>
             <div className="cart-footer">
               <button onClick={clearCart}>خالی‌کردن سبد</button>
-              <button onClick={submitOrder}>ثبت سفارش</button>
+              <button onClick={placeOrder}>ثبت سفارش</button>
+              <Link to="/cartshope/orders">سفارشات من</Link>
             </div>
           </>
-        )}
-
-        {/* لیست سفارشات */}
-        {orders.length > 0 && (
-          <div className="delivered-section">
-            <h3>سفارشات شما</h3>
-            {orders.map((item) => (
-              <div
-                className={`cart-item ${isDelivered(item) ? "delivered" : ""}`}
-                key={item.id}
-              >
-                <img src={item.image} alt={item.title} />
-                <div className="cart-details">
-                  <h3>{item.title}</h3>
-                  <p>{item.price} تومان</p>
-
-                  {isDelivered(item) ? (
-                    <span className="delivered-label">تحویل داده شده است</span>
-                  ) : (
-                    <span className="pending-label">
-                      تحویل تا {getRemainingDays(item)} روز آینده
-                    </span>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
         )}
       </div>
     </div>

@@ -9,7 +9,8 @@ import SelectedProduct from "./component into pages/selectedProduct";
 import Selected from "./component into pages/selected";
 import MySelect from "./navbar pages/my-select";
 import CartShope from "./navbar pages/cartshope";
-import PrivateRoute from "./component/privateroute";
+import UserOrders from "./component into pages/userOrder";
+
 
 const App = () => {
   return (
@@ -22,7 +23,8 @@ const App = () => {
           <Route path="product/:id" element={<SelectedProduct />} />
           <Route path="product/category/:id" element={<Selected />} />
           <Route path="all-products/:id" element={<MySelect />} />
-
+          <Route path="/cartshope" element={<CartShope />}/>
+          <Route path="/cartshope/orders" element={<UserOrders />}/>
           {/* همه‌ی صفحات products زیر این layout هستند */}
           <Route path="/products/*" element={<ProductsLayout />} />
         </Routes>

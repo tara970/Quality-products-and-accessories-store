@@ -1,0 +1,99 @@
+.all-order {
+  padding: 2rem;
+  background-color: burlywood;
+  max-width: 1240px;
+  margin: 0rem auto;
+  min-height: 90vh;
+  text-align: center;
+}
+
+.order-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.order-container h2{
+    color: #2b1800;
+}
+
+.order-card {
+  background: burlywood;
+  border-right: solid 6px #6b400c;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgb(48, 4, 4);
+  margin-top: 3rem;
+}
+
+.order-info p {
+  margin: 0.25rem 0;
+  font-weight: 500;
+  color: #2b1800;
+}
+
+
+.order-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  background-color: #cf9854;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  flex: 1 1 45%;
+}
+
+.order-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-left: 1rem;
+}
+
+.item-details .item-title {
+  font-weight: bold;
+  margin-left: 3rem;
+  color: #2b1800;
+}
+
+.order-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-delivered {
+  background-color: #10b981;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.btn-delivered:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.btn-remove {
+  background-color: #ef4444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.please-login, .no-orders {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 2rem;
+  color: #6b7280;
+}

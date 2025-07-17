@@ -16,6 +16,15 @@ export const ProductProvider = ({ children }) => {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
+  const [orders, setOrders] = useState(() => {
+    const savedOrders = localStorage.getItem("orders");
+    return savedOrders ? JSON.parse(savedOrders) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("orders", JSON.stringify(orders));
+  }, [orders]);
+
   // ذخیره cart در localStorage
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -31,36 +40,35 @@ export const ProductProvider = ({ children }) => {
   }, [user]);
 
   // گرفتن محصولات و افزودن تخفیف موقتی
- useEffect(() => {
-  axios.get("https://fakestoreapi.com/products").then((res) => {
-    const now = new Date();
-    const oneWeekLater = new Date(now);
-    oneWeekLater.setDate(now.getDate() + 7);
+  useEffect(() => {
+    axios.get("https://fakestoreapi.com/products").then((res) => {
+      const now = new Date();
+      const oneWeekLater = new Date(now);
+      oneWeekLater.setDate(now.getDate() + 7);
 
-    const dollarRate = 50000; // نرخ دلار به تومان
-    const updated = res.data.map((p) => {
-      const tomanPrice = p.price * dollarRate;
+      const dollarRate = 50000; // نرخ دلار به تومان
+      const updated = res.data.map((p) => {
+        const tomanPrice = p.price * dollarRate;
 
-      if (tomanPrice > 30000) {
-        return {
-          ...p,
-          originalPrice: p.price,
-          discount: 20, // درصد تخفیف
-          discountEnd: oneWeekLater.toISOString(),
-        };
-      } else {
-        return {
-          ...p,
-          discount: 0,
-          discountEnd: null,
-        };
-      }
+        if (tomanPrice > 30000) {
+          return {
+            ...p,
+            originalPrice: p.price,
+            discount: 20, // درصد تخفیف
+            discountEnd: oneWeekLater.toISOString(),
+          };
+        } else {
+          return {
+            ...p,
+            discount: 0,
+            discountEnd: null,
+          };
+        }
+      });
+
+      setProducts(updated);
     });
-
-    setProducts(updated);
-  });
-}, []);
-
+  }, []);
 
   const login = (username, password) => {
     const isAdmin = username === "tara" && password === "81726354";
@@ -141,6 +149,23 @@ export const ProductProvider = ({ children }) => {
     return product.originalPrice || product.price;
   };
 
+  const placeOrder = () => {
+    const now = new Date();
+    const deliveryDate = new Date(now);
+    deliveryDate.setDate(now.getDate() + 3); // تحویل ۳ روزه
+
+    const newOrder = {
+      id: Date.now(),
+      items: [...cart],
+      status: "در حال پردازش",
+      orderDate: now.toISOString(),
+      deliveryDate: deliveryDate.toISOString(),
+    };
+
+    setOrders((prev) => [...prev, newOrder]);
+    clearCart(); // سبد رو خالی کن بعد ثبت سفارش
+  };
+
   return (
     <ProductContext.Provider
       value={{
@@ -157,7 +182,10 @@ export const ProductProvider = ({ children }) => {
         updateCartQuantity,
         cart,
         getTotalPrice,
-        getDiscountedPrice, // اضافه شد
+        getDiscountedPrice,
+        placeOrder,
+        orders,
+        setOrders,
       }}
     >
       {children}
