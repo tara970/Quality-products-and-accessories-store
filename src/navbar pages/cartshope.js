@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../component/productContext";
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 import "../style/cart.css";
 
 function CartShope() {
@@ -14,15 +14,18 @@ function CartShope() {
     placeOrder,
   } = useContext(ProductContext);
 
-  
+  const navigate = useNavigate();
 
   return (
     <div className="my-container">
       <div className="cart-container">
         <h2>سبد خرید</h2>
 
-        {cart.length === 0 && orders.length === 0 && (
-          <p className="empty">سبد خرید شما خالی است.</p>
+        {cart.length === 0 && (
+          <div className="empty">
+            <p>سبد خرید شما خالی است.</p>
+            <Link to="/cartshope/orders">سفارشات من</Link>
+          </div>
         )}
 
         {/* ✅ نمایش سبد خرید */}
@@ -52,7 +55,7 @@ function CartShope() {
             </div>
             <div className="cart-footer">
               <button onClick={clearCart}>خالی‌کردن سبد</button>
-              <button onClick={placeOrder}>ثبت سفارش</button>
+              <button onClick={()=>{ placeOrder(); navigate("/cartshope/orders") }}>ثبت سفارش</button>
               <Link to="/cartshope/orders">سفارشات من</Link>
             </div>
           </>
