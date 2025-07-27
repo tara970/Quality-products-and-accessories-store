@@ -4,7 +4,9 @@ import React, { createContext, useEffect, useState } from "react";
 export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
-  
+  const [deliveryDateInput, setDeliveryDateInput] = useState("");
+  const [deliveryTime, setDeliveryTime] = useState("");
+
   const [user, setUser] = useState(() => {
     const savedUser = localStorage.getItem("user");
     return savedUser ? JSON.parse(savedUser) : null;
@@ -151,9 +153,13 @@ export const ProductProvider = ({ children }) => {
   };
 
   const placeOrder = () => {
+    if (!deliveryDateInput && !deliveryTime) {
+      alert("لطفا تاریخ وبازه هزمانی تحویل محصول  رو وارد کنید");
+      return;
+    }
+
     const now = new Date();
-    const deliveryDate = new Date(now);
-    deliveryDate.setDate(now.getDate() + 3); // تحویل ۳ روزه
+    const deliveryDate = new Date(deliveryDateInput);
 
     const newOrder = {
       id: Date.now(),
@@ -161,6 +167,7 @@ export const ProductProvider = ({ children }) => {
       status: "در حال پردازش",
       orderDate: now.toISOString(),
       deliveryDate: deliveryDate.toISOString(),
+      deliveryTime: deliveryTime,
     };
 
     setOrders((prev) => [...prev, newOrder]);
@@ -187,6 +194,10 @@ export const ProductProvider = ({ children }) => {
         placeOrder,
         orders,
         setOrders,
+        deliveryDateInput,
+        setDeliveryDateInput,
+        deliveryTime,
+        setDeliveryTime,
       }}
     >
       {children}

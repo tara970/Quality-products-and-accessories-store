@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../component/productContext";
-import { Link , useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import DatePicker from "react-multi-date-picker";
+import persian from "react-date-object/calendars/persian";
+import persian_fa from "react-date-object/locales/persian_fa";
 import "../style/cart.css";
 
 function CartShope() {
@@ -12,6 +15,10 @@ function CartShope() {
     getTotalPrice,
     orders,
     placeOrder,
+    deliveryDateInput,
+    setDeliveryDateInput,
+    deliveryTime,
+    setDeliveryTime,
   } = useContext(ProductContext);
 
   const navigate = useNavigate();
@@ -54,8 +61,47 @@ function CartShope() {
               <h3>مبلغ نهایی: {getTotalPrice().toFixed(0)} تومان</h3>
             </div>
             <div className="cart-footer">
+              <div className="date-time">
+                <div className="date">
+                  <label>تاریخ تحویل</label>
+                  <DatePicker
+                    className="datepicker"
+                    value={deliveryDateInput}
+                    onChange={(date) => setDeliveryDateInput(date?.toDate())}
+                    calendar={persian}
+                    locale={persian_fa}
+                    inputClass="custom-date-input"
+                    format="YYYY/MM/DD"
+                    calendarPosition="bottom-center"
+                    placeholder="انتخاب تاریخ تحویل"
+                  />
+                </div>
+
+                <div className="time">
+                  <label>بازه زمانی تحویل</label>
+                  <select
+                    value={deliveryTime}
+                    onChange={(e) => {
+                      setDeliveryTime(e.target.value);
+                    }}
+                    required
+                  >
+                    <option value="">--بازه زمانی--</option>
+                    <option value="9-12">9تا12 صبح</option>
+                    <option value="12-15">12تا15ظهر</option>
+                    <option value="15-18">15تا18 عصر</option>
+                  </select>
+                </div>
+              </div>
               <button onClick={clearCart}>خالی‌کردن سبد</button>
-              <button onClick={()=>{ placeOrder(); navigate("/cartshope/orders") }}>ثبت سفارش</button>
+              <button
+                onClick={() => {
+                  placeOrder();
+                  navigate("/cartshope/orders");
+                }}
+              >
+                ثبت سفارش
+              </button>
               <Link to="/cartshope/orders">سفارشات من</Link>
             </div>
           </>

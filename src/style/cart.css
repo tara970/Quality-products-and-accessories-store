@@ -119,4 +119,74 @@
   color: #2b1800;
 }
 
+.date-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.date-time label {
+  font-size: 1rem;
+  color: #2b1800;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.date input {
+  width: 12rem;
+  height: 2.5rem;
+  text-align: center;
+  border: none;
+  box-shadow: 3px 5px 15px #2b1800;
+  border-radius: 5px;
+  color: #2b1800;
+}
+
+.date input:hover {
+  background-color: burlywood;
+  color: brown;
+} 
+
+.time select {
+  width: 12rem;
+  height: 2.5rem;
+  text-align: center;
+  border: none;
+  box-shadow: 3px 5px 15px #2b1800;
+  border-radius: 5px;
+  color: #2b1800;
+}
+
+.time select:hover {
+   background-color:burlywood;
+   color: brown;
+}
+
+.datepicker {
+  width: 70%;
+  max-width: 20rem;
+  position: relative;
+}
+
+.custom-date-input {
+  width: 50%;
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+.rmdp-wrapper {
+  width: 75% !important;
+  max-width: 25rem;
+  background: burlywood;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 3px 5px 15px rgba(0,0,0,0.1);
+  direction: rtl;
+}
 
