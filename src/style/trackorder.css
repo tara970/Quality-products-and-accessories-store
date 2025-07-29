@@ -1,0 +1,88 @@
+.trackorder{
+    max-width: 1240px;
+    height: 100vh;
+    background-color: burlywood;
+    margin: 0 auto;
+}
+
+.track-order-container {
+  width: 900px;
+  position: fixed;
+  margin-top: 6rem;
+  margin-left: 8rem;
+  padding: 2rem;
+  background-color: burlywood;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgb(75, 2, 2);
+  direction: rtl;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+.track-order-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2b1800;
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #2b1600;
+  z-index: 0;
+}
+
+.timeline-step {
+  position: relative;
+  text-align: center;
+  flex: 1;
+  z-index: 1;
+}
+
+.timeline-step .circle {
+  width: 40px;
+  height: 40px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 auto;
+  line-height: 40px;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+.timeline-step.active .circle {
+  background: #4caf50;
+}
+
+.timeline-step p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #2b1800;
+}
+
+.order-details {
+  background-color: rgb(160, 112, 50);
+  padding: 1rem 1.5rem;
+  border-radius: 0.8rem;
+  border: none;
+  line-height: 2;
+  color: #2b1800;
+}
+
+.order-details p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
