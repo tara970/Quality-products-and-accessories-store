@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../component/productContext";
 import "../style/userorder.css";
+import { Link } from "react-router-dom";
 
 function UserOrders() {
   const { orders, user, setOrders } = useContext(ProductContext);
@@ -20,10 +21,10 @@ function UserOrders() {
     );
   };
 
-  const isDeliveryTimeReached = (deliveryDate, deliveryTime) => {
+  const isDeliveryTimeReached = (deliveryDate) => {
     const now = new Date();
-    const delivery = new Date(deliveryDate, deliveryTime);
-    return now >= delivery && deliveryTime;
+    const delivery = new Date(deliveryDate);
+    return now >= delivery;
   };
 
   const removeDeliveredItem = (orderId, itemId) => {
@@ -66,23 +67,15 @@ function UserOrders() {
                   🚚 تاریخ تحویل:{" "}
                   {new Date(order.deliveryDate).toLocaleDateString("fa-IR")}
                 </p>
-                <p>📝 وضعیت: {order.status}</p>
+                <Link to={`/cartshope/orders/trackorder?id=${order.id}`}>
+                  📍 مشاهده وضعیت سفارش
+                </Link>
               </div>
-
               {order.items.map((item) => (
                 <div
                   key={item.id}
                   className={`order-item ${item.delivered ? "delivered" : ""}`}
                 >
-                  {item.delivered && (
-                    <button
-                      className="remove-item-btn"
-                      onClick={() => removeDeliveredItem(order.id, item.id)}
-                    >
-                      ❌
-                    </button>
-                  )}
-
                   <div className="item-content">
                     <img src={item.image} alt={item.title} />
                     <div className="item-details">
@@ -90,6 +83,17 @@ function UserOrders() {
                       <p>تعداد: {item.quantity}</p>
                     </div>
                   </div>
+
+                  {item.delivered && (
+                    <div className="overlay">
+                      <button
+                        className="remove-item-btn"
+                        onClick={() => removeDeliveredItem(order.id, item.id)}
+                      >
+                        ❌
+                      </button>
+                    </div>
+                  )}
 
                   {!item.delivered && (
                     <button
@@ -100,8 +104,6 @@ function UserOrders() {
                       تحویل داده شد
                     </button>
                   )}
-
-                  {item.delivered && <div className="overlay" />}
                 </div>
               ))}
             </div>

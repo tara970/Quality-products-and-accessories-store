@@ -41,12 +41,27 @@
 }
 
 .order-item {
+ position: relative;
+  background: rgb(185, 132, 63);
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(238, 158, 53, 0.7);
+  backdrop-filter: blur(2px);
   display: flex;
+  justify-content: center;
   align-items: center;
-  background-color: #cf9854;
-  padding: 0.5rem;
-  border-radius: 0.75rem;
-  flex: 1 1 45%;
+  z-index: 10;
 }
 
 .order-item img {
@@ -75,6 +90,7 @@
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
+  margin-left: 2rem;
 }
 
 .btn-delivered:disabled {
@@ -96,4 +112,19 @@
   font-weight: bold;
   margin-top: 2rem;
   color: #6b7280;
+}
+
+.remove-item-btn {
+  background: #bf2326;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.remove-item-btn:hover {
+  background: #d00913;
 }

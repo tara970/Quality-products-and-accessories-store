@@ -163,7 +163,10 @@ export const ProductProvider = ({ children }) => {
 
     const newOrder = {
       id: Date.now(),
-      items: [...cart],
+      items: cart.map((item) => ({
+        ...item,
+        delivered: false,
+      })),
       status: "در حال پردازش",
       orderDate: now.toISOString(),
       deliveryDate: deliveryDate.toISOString(),
