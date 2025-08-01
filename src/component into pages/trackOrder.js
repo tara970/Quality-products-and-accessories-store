@@ -19,8 +19,8 @@ function TrackOrder() {
 
   if (!order) return <p>سفارشی ثبت نشده</p>;
 
-  const getStatusText = (step) => {
-    switch (step) {
+  const getStatusText = (steps) => {
+    switch (steps) {
       case "ordered":
         return "ثبت سفارش";
       case "processing":
@@ -39,11 +39,14 @@ function TrackOrder() {
     const orderDate = new Date(order.orderDate);
     const deliveryDate = new Date(order.deliveryDate);
 
+    // فاصله 3 ساعت فرضی برای ارسال به پیک
+    const shippedThreshold = new Date(deliveryDate);
+    shippedThreshold.setHours(shippedThreshold.getHours() - 3);
+
     if (now < orderDate) return "ordered";
-    if (now >= orderDate && now < deliveryDate) return "processing";
-    if (now >= deliveryDate && order.status !== "تحویل داده شده")
-      return "shipped";
-    if (order.status === "تحویل داده شده") return "delivered";
+    if (now >= orderDate && now < shippedThreshold) return "processing";
+    if (now >= shippedThreshold && now < deliveryDate) return "shipped";
+    if (now >= deliveryDate) return "delivered";
 
     return "ordered";
   };
