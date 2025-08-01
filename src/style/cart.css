@@ -191,14 +191,13 @@
   direction: rtl;
 }
 
-.empty strong {
-  background-color: #2b1600; 
-  color: burlywood; 
-  padding: 0.4rem 0.4rem;
-  border-radius: 50%;
+.product-count-circle {
   display: inline-block;
-  min-width: 2rem;
-  text-align: center;
+  background-color: #2b1600; 
+  color: burlywood;
+  border-radius: 50%;
+  padding: 6px 4px;
   font-weight: bold;
-  margin: 0 0.5rem;
+  min-width: 40px;
+  text-align: center;
 }

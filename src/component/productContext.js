@@ -167,9 +167,8 @@ export const ProductProvider = ({ children }) => {
         ...item,
         delivered: false,
       })),
-      status: "در حال پردازش",
-      orderDate: now.toISOString(),
-      deliveryDate: deliveryDate.toISOString(),
+      orderDate: now,
+      deliveryDate: deliveryDate,
       deliveryTime: deliveryTime,
     };
 

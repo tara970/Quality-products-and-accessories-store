@@ -32,16 +32,27 @@ function CartShope() {
         {cart.length === 0 && (
           <div className="empty">
             <p>سبد خرید شما خالی است.</p>
-            {localStorage.getItem("totalorderlast") && (
+            {orders.length > 0 && (
               <p>
-                و شامل{" "}
-                <strong>
-                  {localStorage.getItem("totalorderlast")}
-                </strong>
-                محصول میباشد
+                مجموع سفارش‌های قبلی شما شامل{" "}
+                <strong className="product-count-circle">
+                  {orders.reduce(
+                    (total, order) =>
+                      total +
+                      order.items.reduce((sum, item) => sum + item.quantity, 0),
+                    0
+                  )}
+                </strong>{" "}
+                محصول است
               </p>
             )}
-            <Link to="/cartshope/orders" style={{marginTop:"10px", position:"absolute"}}>سفارشات من</Link>
+
+            <Link
+              to="/cartshope/orders"
+              style={{ marginTop: "10px", position: "absolute" }}
+            >
+              سفارشات من
+            </Link>
           </div>
         )}
 
