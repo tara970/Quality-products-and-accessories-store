@@ -128,3 +128,25 @@
 .remove-item-btn:hover {
   background: #d00913;
 }
+
+.btn-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-input button {
+    background-color: transparent;
+    border: none;
+    color: #2b1800;
+    margin-left: -46rem;
+}
+
+.btn-input input {
+   background-color: burlywood;
+   border: none;
+   box-shadow: 3px 5px 15px #2b1800;
+   border-radius: 25px;
+   width: 15rem;
+   height: 2rem;
+   text-align: center;
+}
