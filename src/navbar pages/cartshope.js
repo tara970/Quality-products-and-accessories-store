@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ProductContext } from "../component/productContext";
 import { Link, useNavigate } from "react-router-dom";
 import DatePicker from "react-multi-date-picker";
@@ -22,6 +22,7 @@ function CartShope() {
   } = useContext(ProductContext);
 
   const navigate = useNavigate();
+  const [orderTotal, setOrderTotal] = useState(0);
 
   return (
     <div className="my-container">
@@ -31,7 +32,16 @@ function CartShope() {
         {cart.length === 0 && (
           <div className="empty">
             <p>سبد خرید شما خالی است.</p>
-            <Link to="/cartshope/orders">سفارشات من</Link>
+            {localStorage.getItem("totalorderlast") && (
+              <p>
+                و شامل{" "}
+                <strong>
+                  {localStorage.getItem("totalorderlast")}
+                </strong>
+                محصول میباشد
+              </p>
+            )}
+            <Link to="/cartshope/orders" style={{marginTop:"10px", position:"absolute"}}>سفارشات من</Link>
           </div>
         )}
 
@@ -96,6 +106,12 @@ function CartShope() {
               <button onClick={clearCart}>خالی‌کردن سبد</button>
               <button
                 onClick={() => {
+                  const orderTotals = cart.reduce(
+                    (acc, item) => acc + item.quantity,
+                    0
+                  );
+                  localStorage.setItem("totalorderlast", orderTotals);
+                  setOrderTotal(orderTotals);
                   placeOrder();
                   navigate("/cartshope/orders");
                 }}

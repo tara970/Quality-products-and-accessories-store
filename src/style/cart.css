@@ -108,6 +108,7 @@
   color: #2b1700;
   background-color: transparent;
   padding: 1rem;
+  margin-right: -4rem;
 }
 
 .empty a:hover {
@@ -190,3 +191,14 @@
   direction: rtl;
 }
 
+.empty strong {
+  background-color: #2b1600; 
+  color: burlywood; 
+  padding: 0.4rem 0.4rem;
+  border-radius: 50%;
+  display: inline-block;
+  min-width: 2rem;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 0.5rem;
+}
