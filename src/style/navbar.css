@@ -24,3 +24,19 @@
 .navbar a:hover {
   color: rgb(117, 77, 29);
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+    margin-right: 3rem;
+    margin-bottom: 0;
+  }
+
+  .navbar a {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}

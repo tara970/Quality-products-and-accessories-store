@@ -78,3 +78,82 @@ color: burlywood;
 .nav img:hover {
   transform: scale(1.1);
 }
+
+@media (max-width: 768px) {
+  .wave-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin-top: 32rem;
+    width: 100%;
+    position: absolute;
+  }
+
+  .daste {
+    position: absolute;
+    text-align: center;
+    margin-left: 33rem;
+    margin-bottom: 10rem;
+    margin-top: -5rem;
+    font-size: 15px;
+    z-index: 5;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: -10rem;
+    margin-bottom: 10rem;
+    position: relative;
+    z-index: 2; /* روی موج قرار بگیره */
+  }
+
+  .nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .nav img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 14rem;
+    transition: transform 0.3s ease;
+  }
+
+  .nav span {
+    font-size: 7px;
+    margin-top: 17.5rem;
+    margin-left: 0.25rem;
+    background-color: burlywood;
+    padding: 0.3rem 0.7rem;
+    border-radius: 25px;
+    box-shadow: 2px 4px 10px rgb(55, 35, 9);
+    position: absolute;
+    width: 2rem;
+    height: 1rem;
+  }
+
+  .top,
+  .bottom {
+    width: 100vw;
+    height: auto;
+    margin-top: -1rem;
+  }
+
+  .top {
+    top: -2rem;
+    z-index: 0;
+  }
+
+  .bottom {
+    bottom: 4rem;
+    z-index: 0;
+  }
+}

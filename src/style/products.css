@@ -140,4 +140,23 @@
   }
 }
 
+@media(max-width: 765px) {
+ 
+  .text{
+        font-size: 10px;
+        margin-left: 27rem;
+        width: 10rem;
+    }
+
+    .btnSearch .btn{
+       margin-top: -18rem;
+    }
+
+    .input{
+        width: 5rem;
+        margin-top: -15rem;
+        position: absolute;
+    }
+}
+
 

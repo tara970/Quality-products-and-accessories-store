@@ -81,3 +81,10 @@
   color: green;
   font-weight: bold;
 }
+
+@media(max-width: 765px) {
+   .bsetproduct h1{
+      font-size: 1.5rem;
+      margin-right: 2rem;
+   }
+}

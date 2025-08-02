@@ -3,12 +3,14 @@
     min-height: 900px;
     margin: 0 auto;
     background-color: burlywood;
+    display: flex;
 }
 
 .cart-container {
   width: 800px;
   margin-left: 11rem;
   margin-top: 5rem;
+  height: 23rem;
   background: burlywood;
   padding: 2rem;
   border-radius: 1rem;
@@ -16,7 +18,6 @@
   font-family: sans-serif;
   direction: rtl;
   text-align: right;
-  position: absolute;
 }
 
 .cart-container h2 {
@@ -192,12 +193,36 @@
 }
 
 .product-count-circle {
-  display: inline-block;
-  background-color: #2b1600; 
-  color: burlywood;
-  border-radius: 50%;
-  padding: 6px 4px;
+  display: inline-block; 
+  color: #2b1800;
   font-weight: bold;
+  font-size: 3rem;
   min-width: 40px;
   text-align: center;
 }
+
+@media (max-width: 1024px) {
+  .cart-container {
+    width: 90%;
+    margin: 5rem auto;
+    position: static;
+  }
+
+  .cart-footer button {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-container {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-container {
+    padding: 0.5rem;
+  }
+}  
