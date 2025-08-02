@@ -123,8 +123,11 @@ function CartShope() {
                   );
                   localStorage.setItem("totalorderlast", orderTotals);
                   setOrderTotal(orderTotals);
-                  placeOrder();
-                  navigate("/cartshope/orders");
+                  const success = placeOrder();
+                  if (success) {
+                    navigate("/cartshope/orders");
+                    alert("سفارش شما ثبت شد");
+                  }
                 }}
               >
                 ثبت سفارش

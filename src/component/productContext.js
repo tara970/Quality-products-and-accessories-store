@@ -24,6 +24,33 @@ export const ProductProvider = ({ children }) => {
     return savedOrders ? JSON.parse(savedOrders) : [];
   });
 
+  const [totalItems, setTotalItems] = useState(() => {
+    const saved = localStorage.getItem("orders");
+    const orders = saved ? JSON.parse(saved) : [];
+    const total = orders.reduce((orderAcc, order) => {
+      return (
+        orderAcc +
+        order.items.reduce((itemAcc, item) => itemAcc + item.quantity, 0)
+      );
+    }, 0);
+    return total;
+  });
+
+  useEffect(() => {
+    const saved = localStorage.getItem("orders");
+    const storedOrders = saved ? JSON.parse(saved) : [];
+
+    const pastOrderItems = storedOrders.reduce(
+      (acc, order) =>
+        acc + order.items.reduce((sum, item) => sum + item.quantity, 0),
+      0
+    );
+
+    const cartItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+    setTotalItems(pastOrderItems + cartItems);
+  }, [cart]);
+
   useEffect(() => {
     localStorage.setItem("orders", JSON.stringify(orders));
   }, [orders]);
@@ -125,6 +152,8 @@ export const ProductProvider = ({ children }) => {
 
   const clearCart = () => {
     setCart([]);
+    localStorage.removeItem("cart");
+    alert("این محصول از سبد خرید حذف شد");
   };
 
   const updateCartQuantity = (productId, newQuantity) => {
@@ -171,9 +200,9 @@ export const ProductProvider = ({ children }) => {
       deliveryDate: deliveryDate,
       deliveryTime: deliveryTime,
     };
-
+    setCart([]);
     setOrders((prev) => [...prev, newOrder]);
-    clearCart(); // سبد رو خالی کن بعد ثبت سفارش
+    return true;
   };
 
   return (
@@ -200,6 +229,7 @@ export const ProductProvider = ({ children }) => {
         setDeliveryDateInput,
         deliveryTime,
         setDeliveryTime,
+        totalItems,
       }}
     >
       {children}

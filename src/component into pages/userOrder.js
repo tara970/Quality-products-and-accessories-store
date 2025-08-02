@@ -3,7 +3,6 @@ import { ProductContext } from "../component/productContext";
 import "../style/userorder.css";
 import { Link, useNavigate } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
-import { order } from "@mui/system";
 
 function UserOrders() {
   const { orders, user, setOrders } = useContext(ProductContext);
@@ -83,6 +82,20 @@ function UserOrders() {
   return (
     <div className="all-order">
       <div className="order-container">
+        <div className="btn-input">
+          <button onClick={handleClick}>
+            <SearchIcon />
+          </button>
+          {showInput && (
+            <input
+              value={search}
+              type="text"
+              placeholder="جستوجو بر اساس نام"
+              onChange={(e) => setSearch(e.target.value)}
+              onKeyDown={handleSearchInter}
+            />
+          )}
+        </div>
         <h2>📦 سفارشات من</h2>
 
         {orders.length === 0 ? (
@@ -100,20 +113,6 @@ function UserOrders() {
             .filter((order) => order.items.length > 0)
             .map((order) => (
               <div key={order.id} className="order-card">
-                <div className="btn-input">
-                  <button onClick={handleClick}>
-                    <SearchIcon />
-                  </button>
-                  {showInput && (
-                    <input
-                      value={search}
-                      type="text"
-                      placeholder="جستوجو بر اساس نام"
-                      onChange={(e) => setSearch(e.target.value)}
-                      onKeyDown={handleSearchInter}
-                    />
-                  )}
-                </div>
                 <div className="order-info">
                   <p>
                     📅 تاریخ ثبت:{" "}
