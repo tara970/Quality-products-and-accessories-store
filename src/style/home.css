@@ -1,11 +1,16 @@
-.main-container{
+/* صفحه اصلی */
+.main-container {
   max-width: 1250px;
   height: 100vh;
   margin: 0 auto;
   padding: 0 1rem;
   background-color: burlywood;
-}
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .container {
   text-align: center;
@@ -24,43 +29,25 @@
   margin: 0.3rem 0;
 }
 
-.btn1  {
+/* دکمه ورود */
+.btn1 {
   background-color: #2b1700;
-  position: absolute;
   color: burlywood;
   font-size: 1.1rem;
   padding: 0.6rem 1.5rem;
-  margin-top: -20rem;
-  margin-left: 35rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  position: absolute;
+  margin-top: -18rem;
+  margin-left: -3rem;
 }
 
-.btn1 :hover {
-  background-color: #2980b9;
+.btn1:hover {
+  background-color: rgb(94, 56, 6);
   transform: scale(1.05);
 }
-
-/* برای ریسپانسیو بهتر */
-@media (max-width: 600px) {
-  .header {
-    font-size: 1.5rem;
-  }
-
-  .message {
-    font-size: 1rem;
-  }
-
-  button {
-    font-size: 1rem;
-    padding: 0.5rem 1.2rem;
-  }
-}
-
-
-
 
 /* لایه‌ی پشت مودال */
 .modal-loyer {
@@ -100,7 +87,7 @@
   }
 }
 
-/* دکمه بسته شدن اختیاری */
+/* دکمه بستن مودال */
 .modal button.close {
   background: transparent;
   border: none;
@@ -109,7 +96,7 @@
   cursor: pointer;
 }
 
-/* فیلدهای فرم */
+/* فیلدهای فرم داخل مودال */
 .modal input {
   width: 100%;
   padding: 0.8rem;
@@ -119,7 +106,7 @@
   font-size: 1rem;
 }
 
-/* دکمه ورود */
+/* دکمه ورود مودال */
 .modal button[type="submit"] {
   background-color: #0077ff;
   color: white;
@@ -134,4 +121,28 @@
 
 .modal button[type="submit"]:hover {
   background-color: #005ccc;
+}
+
+/* رسپانسیو برای موبایل */
+@media (max-width: 600px) {
+  .header {
+    font-size: 1.5rem;
+  }
+
+  .message {
+    font-size: 1rem;
+  }
+
+  .btn1 {
+    font-size: 1rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .modal {
+    padding: 1.5rem;
+  }
+
+  .modal input {
+    font-size: 0.9rem;
+  }
 }
