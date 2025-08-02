@@ -7,10 +7,10 @@ import "../style/products.css";
 import clothesImage from "../images/clothes.jpg";
 import BestSellerProduct from "../component into pages/bestSellerProduct";
 import SpecialSale from "../component into pages/specialSale";
+import FloutingCartIcon from "../navbar pages/floutingCartIcon";
 
 const Products = () => {
   const { products, addProduct, user } = useContext(ProductContext);
-  console.log("user =", user);
 
 
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -158,6 +158,9 @@ const Products = () => {
 
       <div>
         <BestSellerProduct />
+      </div>
+      <div>
+        <FloutingCartIcon />
       </div>
       <div>
         <SpecialSale />

@@ -11,6 +11,7 @@ import MySelect from "./navbar pages/my-select";
 import CartShope from "./navbar pages/cartshope";
 import UserOrders from "./component into pages/userOrder";
 import TrackOrder from "./component into pages/trackOrder";
+import FloutingCartIcon from "./navbar pages/floutingCartIcon";
 
 
 const App = () => {
