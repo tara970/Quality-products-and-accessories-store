@@ -88,3 +88,9 @@
       margin-right: 2rem;
    }
 }
+
+@media(max-width: 450px){
+   .bsetproduct{
+    margin-top: -10rem;
+   }
+}
