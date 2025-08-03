@@ -106,3 +106,28 @@
     }
    
 }
+
+@media(max-width: 450px){
+    .special{
+      width: 400px;
+      margin-left: 1rem;
+    }
+    .countdown-item{
+      min-width: 20px;
+      height: 4rem;
+      margin-left: 1rem;
+    }
+    .countdown-item-label{
+       margin-top: 1rem;
+    }
+    .special h3{
+       margin-top: 10rem;
+       width: 13rem;
+       margin-left: 8rem;
+    }
+    .special p{
+       margin-left: 10rem;
+       margin-top: 8rem;
+    }
+}
+

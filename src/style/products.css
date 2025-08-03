@@ -159,4 +159,15 @@
     }
 }
 
+@media(max-width: 450px){
+   .image{
+     display: none;
+   }
+   .text{
+      margin-left: 3rem;
+      font-size: 15px;
+      width: 20rem;
+   }
+}
+
 
