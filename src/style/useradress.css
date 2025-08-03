@@ -1,0 +1,150 @@
+.useraddress{
+    max-width: 1250px;
+    background-color: burlywood;
+    margin: 0 auto;
+    height: 650px;
+}
+
+.address-form {
+  background-color: burlywood;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 500px;
+  position: absolute;
+  margin: 5rem 22rem;
+  box-shadow: 3px 5px 15px rgb(59, 4, 4);
+  font-family: 'Tahoma', sans-serif;
+}
+
+.address-form input,
+.address-form textarea {
+  width: 100%;
+  color: #2b1700;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.address-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.address-form button {
+  background-color: #2b1700;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.address-form button:hover {
+  background-color: #3e2b22;
+}
+
+.address-form input:placeholder-shown{
+     color: black;
+}
+
+.input-select {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.input-select input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.input-select select {
+  width: 4rem;
+  height: 2.7rem;
+  margin-top: 1px;
+  padding: 0.75rem;
+  border: none;
+  border-top-right-radius: 9px;
+  border-bottom-right-radius: 9px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.63);
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .input-select {
+    flex-direction: column;
+  }
+
+  .input-select input,
+  .input-select select {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+
+  .input-select select {
+    margin-top: 0.5rem;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+}
+
+.gateway-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.gateway-list li {
+  padding: 10px;
+  margin: 10px 0;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.gateway-list li:hover {
+  background: #ccc;
+}
+
+.gateway-list .img{
+    width: 3rem;
+    height: 3rem;
+}
