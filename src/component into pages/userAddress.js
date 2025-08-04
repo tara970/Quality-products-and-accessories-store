@@ -3,9 +3,9 @@ import "../style/useradress.css";
 import { useNavigate } from "react-router-dom";
 import { ProductContext } from "../component/productContext";
 import melat from "../images/melat.png";
-import pasargad from "../images/pasargd.jpg"
+import pasargad from "../images/pasargd.jpg";
 
-function UserAdress() {
+function UserAddress() {
   const [formData, setFormData] = useState({
     fullname: "",
     phone: "",
@@ -35,8 +35,12 @@ function UserAdress() {
     setIsModalOpen(false);
   };
 
+  const navigate = useNavigate();
+  const { placeOrder } = useContext(ProductContext);
+  //البته این دستور success برای زمانی باید اجرا بشه که من پرداختم رو تنجتم دادم//
   const handlePayment = (gateway) => {
     const success = placeOrder();
+    console.log(gateway);
 
     if (success) {
       alert(`درحال انتقال به درگاه پرداخت: ${gateway}`);
@@ -48,9 +52,6 @@ function UserAdress() {
       alert("مشکلی در ثبت سفارش پیش آمده.");
     }
   };
-
-  const navigate = useNavigate();
-  const { placeOrder } = useContext(ProductContext);
 
   const cities = [
     "تهران",
@@ -73,15 +74,6 @@ function UserAdress() {
       ...formData,
       [e.target.name]: e.target.value,
     });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const success = placeOrder();
-    if (success) {
-      navigate("/cartshope/orders");
-      alert("سفارش شما ثبت شد");
-    }
   };
 
   return (
@@ -143,7 +135,7 @@ function UserAdress() {
           placeholder="کد پستی"
           onChange={handleChange}
         />
-        <button type="button" onClick={handleOpenModal} >
+        <button type="button" onClick={handleOpenModal}>
           پرداخت
         </button>
       </form>
@@ -153,10 +145,10 @@ function UserAdress() {
             <h3>انتخاب درگاه پرداخت</h3>
             <ul className="gateway-list">
               <li onClick={() => handlePayment("ملت")}>
-                <img src={melat} alt="" className="img"/>
+                <img src={melat} alt="" className="img" />
               </li>
               <li onClick={() => handlePayment("پاسارگاد")}>
-                <img src={pasargad} alt="" className="img"/>
+                <img src={pasargad} alt="" className="img" />
               </li>
             </ul>
             <button onClick={handleCloseModal}>بستن</button>
@@ -167,4 +159,4 @@ function UserAdress() {
   );
 }
 
-export default UserAdress;
+export default UserAddress;

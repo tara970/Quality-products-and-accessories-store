@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { ProductContext } from "../component/productContext";
 
+
 function Login({ onClose }) {
   const { login } = useContext(ProductContext);
   const [username, setUsername] = useState("");
