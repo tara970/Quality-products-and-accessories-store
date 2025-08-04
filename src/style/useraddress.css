@@ -116,7 +116,8 @@
 }
 
 .modal {
-  background: #fff;
+  background: rgb(227, 195, 153);
+  box-shadow: 5px 15px 10px rgb(45, 3, 3);
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
@@ -134,14 +135,14 @@
 .gateway-list li {
   padding: 10px;
   margin: 10px 0;
-  background: #eee;
+  background: burlywood;
   cursor: pointer;
   border-radius: 6px;
   transition: 0.3s;
 }
 
 .gateway-list li:hover {
-  background: #ccc;
+  background: rgb(51, 33, 9);
 }
 
 .gateway-list .img{

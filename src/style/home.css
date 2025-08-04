@@ -66,10 +66,10 @@
 
 /* خود مودال */
 .modal {
-  background: #fff;
+  background: rgb(216, 186, 147);
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 5px 15px 10px rgb(49, 5, 5);
   width: 90%;
   max-width: 400px;
   animation: modalFadeIn 0.3s ease;
@@ -94,13 +94,15 @@
   font-size: 1.5rem;
   float: right;
   cursor: pointer;
+  margin-top: -1rem;
 }
 
 /* فیلدهای فرم داخل مودال */
 .modal input {
   width: 100%;
+  height: 2rem;
   padding: 0.8rem;
-  margin: 0.5rem 0;
+  margin: 0.5rem -1rem;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
@@ -108,19 +110,20 @@
 
 /* دکمه ورود مودال */
 .modal button[type="submit"] {
-  background-color: #0077ff;
-  color: white;
-  padding: 0.8rem;
+  background-color: #2b1800;
+  color: burlywood;
+  padding: 1rem;
   border: none;
   border-radius: 8px;
   width: 100%;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.2s ease;
+  margin-top: 1rem;
 }
 
 .modal button[type="submit"]:hover {
-  background-color: #005ccc;
+  background-color: rgb(65, 38, 2);
 }
 
 /* رسپانسیو برای موبایل */
