@@ -11,7 +11,7 @@ import MySelect from "./navbar pages/my-select";
 import CartShope from "./navbar pages/cartshope";
 import UserOrders from "./component into pages/userOrder";
 import TrackOrder from "./component into pages/trackOrder";
-import UserAdress from "./component into pages/userAdress";
+import UserAddress from "./component into pages/userAddress";
 
 
 
@@ -29,7 +29,7 @@ const App = () => {
           <Route path="/cartshope" element={<CartShope />}/>
           <Route path="/cartshope/orders" element={<UserOrders />}/>
           <Route path="/cartshope/orders/trackorder" element={<TrackOrder />}/>
-          <Route path="/cartshope/useradress" element={<UserAdress />}/>
+          <Route path="/cartshope/useradress" element={<UserAddress />}/>
           {/* همه‌ی صفحات products زیر این layout هستند */}
           <Route path="/products/*" element={<ProductsLayout />} />
         </Routes>
