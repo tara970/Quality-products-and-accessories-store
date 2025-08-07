@@ -10,7 +10,8 @@
   width: 800px;
   margin-left: 11rem;
   margin-top: 5rem;
-  height: 23rem;
+  min-height: 200px;
+  height: 100%;
   background: burlywood;
   padding: 2rem;
   border-radius: 1rem;
@@ -53,7 +54,7 @@
 .cart-details input {
   width: 60px;
   padding: 0.3rem;
-  margin-left: 1rem;
+  margin: 1rem;
   border: 1px solid #ccc;
   border-radius: 0.3rem;
 }
@@ -140,41 +141,37 @@
   width: 12rem;
   height: 2.5rem;
   text-align: center;
-  border: none;
-  box-shadow: 3px 5px 15px #2b1800;
+  border: 2px solid rgb(48, 3, 3);
   border-radius: 5px;
   color: #2b1800;
 }
 
 .date input:hover {
   background-color: burlywood;
-  color: brown;
+  color: rgb(86, 11, 11);
 } 
 
 .time select {
   width: 12rem;
   height: 2.5rem;
   text-align: center;
-  border: none;
-  box-shadow: 3px 5px 15px #2b1800;
+  border: 2px solid rgb(48, 3, 3);
   border-radius: 5px;
   color: #2b1800;
 }
 
 .time select:hover {
    background-color:burlywood;
-   color: brown;
+   color: rgb(73, 11, 11);
 }
 
 .datepicker {
-  width: 70%;
-  max-width: 20rem;
   position: relative;
 }
 
 .custom-date-input {
   width: 50%;
-  height: 3rem;
+  height: 1rem;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border: none;
@@ -183,13 +180,18 @@
 }
 
 .rmdp-wrapper {
-  width: 75% !important;
-  max-width: 25rem;
+  max-width: 20rem;
   background: burlywood;
   border-radius: 1rem;
   padding: 1rem;
-  box-shadow: 3px 5px 15px rgba(0,0,0,0.1);
+  border: 2px solid rgb(39, 3, 3);
   direction: rtl;
+}
+
+.button{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
 }
 
 .product-count-circle {
@@ -201,17 +203,6 @@
   text-align: center;
 }
 
-@media (max-width: 1024px) {
-  .cart-container {
-    width: 90%;
-    margin: 5rem auto;
-    position: static;
-  }
-
-  .cart-footer button {
-    margin-left: 2rem;
-  }
-}
 
 @media (max-width: 768px) {
   .cart-container {
@@ -221,8 +212,32 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 430px) {
   .cart-container {
-    padding: 0.5rem;
+      width: 330px;
+      min-height: 500px;
+      height: 100%;
   }
+    
+   .date-time {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+   }
+
+   .date-time input {
+        margin: 1rem auto;
+   } 
+
+   .button button {
+        width: 5rem;
+        height: 3rem;
+        font-size: 10px;
+        font-weight: bold;
+   }
+
+   .button a {
+      font-size: 13px;
+      font-weight: bold;
+   }
 }  

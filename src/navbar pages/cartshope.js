@@ -114,21 +114,23 @@ function CartShope() {
                   </select>
                 </div>
               </div>
-              <button onClick={clearCart}>خالی‌کردن سبد</button>
-              <button
-                onClick={() => {
-                  const orderTotals = cart.reduce(
-                    (acc, item) => acc + item.quantity,
-                    0
-                  );
-                  localStorage.setItem("totalorderlast", orderTotals);
-                  setOrderTotal(orderTotals);
+              <div className="button">
+                <button onClick={clearCart}>خالی‌کردن سبد</button>
+                <button
+                  onClick={() => {
+                    const orderTotals = cart.reduce(
+                      (acc, item) => acc + item.quantity,
+                      0
+                    );
+                    localStorage.setItem("totalorderlast", orderTotals);
+                    setOrderTotal(orderTotals);
                     navigate("/cartshope/useradress");
-                }}
-              >
-                ثبت سفارش
-              </button>
-              <Link to="/cartshope/orders">سفارشات من</Link>
+                  }}
+                >
+                  ثبت سفارش
+                </button>
+                <Link to="/cartshope/orders">سفارشات من</Link>
+              </div>
             </div>
           </>
         )}

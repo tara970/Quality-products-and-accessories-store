@@ -126,26 +126,3 @@
   background-color: rgb(65, 38, 2);
 }
 
-/* رسپانسیو برای موبایل */
-@media (max-width: 600px) {
-  .header {
-    font-size: 1.5rem;
-  }
-
-  .message {
-    font-size: 1rem;
-  }
-
-  .btn1 {
-    font-size: 1rem;
-    padding: 0.5rem 1.2rem;
-  }
-
-  .modal {
-    padding: 1.5rem;
-  }
-
-  .modal input {
-    font-size: 0.9rem;
-  }
-}

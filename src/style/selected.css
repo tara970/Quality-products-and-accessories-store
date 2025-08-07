@@ -60,3 +60,24 @@
   justify-content: start;
   color: #2b1800;
 }
+
+@media(max-width:768px){
+   .selected-container{
+      height: 100%;
+}
+   .selected-card{
+        min-height: 500px;
+        margin: 0 2rem;
+}
+}
+
+@media(max-width:430px){
+    .selected-container{
+       min-height: 700px;
+    }
+    .selected-card{
+       min-width: 280px;
+       margin: 0 2rem;
+       max-height: 999px;
+    }
+}

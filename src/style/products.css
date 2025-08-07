@@ -1,55 +1,73 @@
 .products-container {
   text-align: left;
   background-color: burlywood;
-  max-width: 1250px;
-  height: 100vh;
+  max-width: 1218px;
   margin: 0 auto;
-  padding: 1rem 0;
+  padding: 1rem;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* ✅ سرچ */
-.btnSearch .btn{
+.btnSearch .btn {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  margin-left: 4rem;
   position: absolute;
-  margin-top: -3rem;
+  top: 2rem;
+  left: 3rem;
+  z-index: 5;
 }
 
-
 .input {
-  margin-top: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 50px;
   box-shadow: 3px 5px 15px rgb(59, 37, 8);
   border: none;
-  width: 10rem;
-  margin-left: 3rem;
+  width: 100%;
   max-width: 400px;
   font-size: 1rem;
-  position: relative; /* اضافه شد */
-  z-index: 10;         /* اضافه شد */
+  z-index: 10;
+  position: relative;
+  margin-bottom: 2rem;
 }
 
-/* ✅ تصویر داخل SVG Blob */
-.image {
-  margin-top: -30rem;
+/* ✅ تصویر */
+.image svg{
+  width: 100%;
+  width: 700px;
+  margin: -35rem -7rem;
+  display: block;
   position: relative;
-  margin-left: -16rem;
   z-index: 1;
 }
-
 /* ✅ متن */
 .text {
-  margin-top: 2rem;
-  padding: 2rem;
   text-align: right;
-  width: 40rem;
-  margin-left: 32rem;
+  position: relative;
+  margin: -1rem 33rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  font-size: 1.2rem;
+  direction: rtl;
 }
 
-/* 👇 پس‌زمینه تار مودال */
+/* ✅ دکمه اضافه کردن محصول */
+.add-product-btn {
+  padding: 0.6rem 1.5rem;
+  background-color: #2b1800;
+  color: burlywood;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 2rem auto;
+  display: block;
+  position: relative;
+  z-index: 10;
+}
+
+/* ✅ مودال - پس زمینه */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -63,19 +81,18 @@
   justify-content: center;
 }
 
-/* 👇 محتوای داخلی مودال */
+/* ✅ مودال - محتوا */
 .modal-content {
   background-color: #fff;
   padding: 2rem;
   border-radius: 20px;
   width: 90%;
   max-width: 500px;
-  position: relative;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   animation: fadeIn 0.3s ease-in-out;
+  position: relative;
 }
 
-/* 👇 فرم داخل مودال */
 .modal-form {
   display: flex;
   flex-direction: column;
@@ -88,7 +105,6 @@
   border: 1px solid #ccc;
 }
 
-/* 👇 دکمه ثبت در فرم */
 .form-btn {
   background-color: #2b1800;
   color: white;
@@ -103,21 +119,6 @@
   background-color: burlywood;
 }
 
-/* 👇 دکمه باز کردن مودال */
-.add-product-btn {
-  padding: 0.6rem 1.5rem;
-  background-color: #2b1800;
-  color: burlywood;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  position: absolute;
-  z-index: 10;
-  margin-top: -16rem;
-  margin-left: 9rem;
-}
-
-/* 👇 دکمه بستن مودال */
 .modal-close-btn {
   position: absolute;
   top: 1rem;
@@ -128,7 +129,6 @@
   cursor: pointer;
 }
 
-/* 👇 انیمیشن ظاهر شدن مودال */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -140,34 +140,55 @@
   }
 }
 
-@media(max-width: 765px) {
- 
+@media (max-width: 768px) {
+  .text {
+    font-size: 12px;
+    margin: 2rem 22rem;
+    width: 20rem;
+  }
+
+  .btnSearch .btn {
+    top: 1.5rem;
+    left: 2rem;
+  }
+
+  .image svg {
+      width: 400px;
+      margin: -30rem -2rem;
+  }
+
+  .input {
+    width: 80%;
+    margin: 1rem auto;
+    display: block;
+  }
+}
+
+
+
+@media(max-width:430px){
+  .products-container{
+       padding-bottom: 10rem;
+  }  
   .text{
-        font-size: 10px;
-        margin-left: 27rem;
-        width: 10rem;
+       margin: 3rem -1rem;
     }
-
-    .btnSearch .btn{
-       margin-top: -18rem;
-    }
-
-    .input{
-        width: 5rem;
-        margin-top: -15rem;
-        position: absolute;
+    .image{
+       display: none;
+       opacity: 0;
     }
 }
 
-@media(max-width: 450px){
-   .image{
-     display: none;
-   }
-   .text{
-      margin-left: 3rem;
-      font-size: 15px;
-      width: 20rem;
-   }
+@media (max-width: 360px) {
+  .text {
+    margin: 2rem 0;
+  }
+
+  .image{
+      display: none;
+  }
+
+  .input {
+    width: 90%;
+  }
 }
-
-

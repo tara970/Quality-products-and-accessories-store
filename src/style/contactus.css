@@ -52,3 +52,15 @@
   text-align: right;
   direction: rtl;
 }
+
+@media(max-width:768px){
+   .contact-overlay{
+      width: 230px;
+   }
+}
+
+@media(max-width:430px){
+   .contact-overlay{
+      width: 230px;
+   }
+}
