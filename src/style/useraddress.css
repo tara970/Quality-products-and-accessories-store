@@ -2,7 +2,9 @@
     max-width: 1250px;
     background-color: burlywood;
     margin: 0 auto;
-    height: 650px;
+    min-height: 650px;
+    overflow-x: hidden;
+    
 }
 
 .address-form {
@@ -85,21 +87,12 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
-  .input-select {
-    flex-direction: column;
+@media (max-width: 768px) {
+  .address-form{
+      width: 700px;
+      margin: 3rem 6rem;
   }
-
-  .input-select input,
-  .input-select select {
-    width: 100%;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-  }
-
-  .input-select select {
-    margin-top: 0.5rem;
-  }
+  
 }
 
 .modal-overlay {
@@ -148,4 +141,27 @@
 .gateway-list .img{
     width: 3rem;
     height: 3rem;
+
+}
+@media(max-width:430px){
+  .useraddress{
+     height: 800px;
+  }
+  .address-form{
+      width: 290px;
+      margin: 5rem 1rem;
+  }
+  .input-select select {
+      width: 5rem;
+      height: 2.8rem;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      margin: 0 13.2rem;
+      position: fixed;
+      background-color: rgb(244, 235, 223);
+  }
+  .input-select input {
+      border-bottom-right-radius: 9px;
+      border-top-right-radius: 9px;
+  }
 }

@@ -27,16 +27,29 @@
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: end;
-    gap: 1rem;
-    margin-right: 3rem;
-    margin-bottom: 0;
+     display: flex;
+     flex-direction: row;
+     
   }
 
   .navbar a {
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    margin-top: 1.5rem;
     margin-bottom: 1rem;
+  }
+}
+
+@media(max-width:430px){
+  .navbar{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      margin: 0 1rem;
+  }
+  .navbar a{
+      font-size: 9px;
+      font-weight: bold;
+      margin-left: -3rem;
+      margin-top: 2rem;
   }
 }

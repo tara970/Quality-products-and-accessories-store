@@ -1,5 +1,5 @@
 .sale-container{
-    max-width: 1250px;
+    max-width: 100%;
     margin: 0 auto;
     background-color: burlywood;
     margin-top: -8rem;
@@ -88,10 +88,13 @@
   margin-left: 3rem;
 }
 
-@media(max-width: 765px) {
-  
+@media(max-width: 768px) {
+  .sale-container{
+    padding: 1rem;
+  }
   .special{
       width: 580px;
+      margin-left: 5rem;
    }
     .special h3{
        font-size: 15px;
@@ -107,27 +110,34 @@
    
 }
 
-@media(max-width: 450px){
+@media(max-width: 430px){
     .special{
-      width: 400px;
-      margin-left: 1rem;
+      width: 370px;
+      position: relative;
+      margin: 15rem -1rem;
     }
-    .countdown-item{
-      min-width: 20px;
-      height: 4rem;
-      margin-left: 1rem;
-    }
-    .countdown-item-label{
-       margin-top: 1rem;
-    }
+   
     .special h3{
-       margin-top: 10rem;
-       width: 13rem;
-       margin-left: 8rem;
+      margin: 9rem 6rem;
     }
     .special p{
-       margin-left: 10rem;
-       margin-top: 8rem;
+       margin: 11rem 8rem;
     }
+}
+
+@media(max-width:360px){
+     .special{
+        width: 300px;
+        margin: 0 -1rem;
+     }
+     .countdown-item{
+        margin: -70px 1px;
+     }
+     .special h3{
+        margin: 8rem 3rem;
+     }
+     .special p{
+        margin: 10rem 6rem;
+     }
 }
 
