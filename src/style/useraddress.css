@@ -157,7 +157,7 @@
       border-bottom-left-radius: 0;
       border-top-left-radius: 0;
       margin: 0 13.2rem;
-      position: fixed;
+      position: absolute;
       background-color: rgb(244, 235, 223);
   }
   .input-select input {

@@ -123,6 +123,13 @@
     .special p{
        margin: 11rem 8rem;
     }
+    .countdown-item{
+        height: 4rem;
+        margin-left: 1rem;
+    }
+    .countdown-item-label{
+         margin: 1rem -0.25rem;
+    }
 }
 
 @media(max-width:360px){

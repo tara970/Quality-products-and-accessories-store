@@ -98,6 +98,7 @@
     }
     .bsetproduct-card{
       width: 120px;
+      min-height: 330px;
     }
 }
 

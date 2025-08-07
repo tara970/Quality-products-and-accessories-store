@@ -239,5 +239,7 @@
    .button a {
       font-size: 13px;
       font-weight: bold;
+      margin-right: 6rem;
+      position: absolute;
    }
 }  
