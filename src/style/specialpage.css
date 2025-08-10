@@ -1,0 +1,49 @@
+.container-specialpage {
+    max-width: 1250px;
+    margin: 0 auto;
+    background-color: burlywood;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.special-page {
+     width: 15rem;
+     min-height: 17rem;
+     box-shadow: 3px 5px 15px rgb(49, 4, 4);
+     border-radius: 25px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center; 
+     margin: 1rem 1rem;
+}
+
+.special-page:hover {
+     transform: translateY(-5px);
+}
+
+.image-page{
+     width: 4rem;
+     height: 5rem;
+}
+
+.title-page-h {
+      font-size: 12px;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.title-page-p {
+      font-size: 10px;
+     color: red;
+}
+
+.tooman {
+      font-size: 12px;
+      color: green;
+}

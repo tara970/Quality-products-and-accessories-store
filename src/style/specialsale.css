@@ -27,24 +27,41 @@
     border-bottom-right-radius: 25px;
 }
 
-.special h3{
+.header-paragraph {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
     color: burlywood;
+    margin-top: -4rem;
+    margin-left: 2rem;
     font-size: 2rem;
-    font-weight: bold;
-    margin-left: 22rem;
-    position: absolute;
-    margin-top: 3rem;
 }
 
-
-.special p{
-    color: burlywood;
-    font-size: 2rem;
-    font-weight: bold;
-    position: absolute;
-    margin-left: 28rem;
-    margin-top: 7rem;
+.expired{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
 }
+
+.expired .p-expired {
+    margin: 2rem 8rem;
+    color: burlywood;
+    font-size: 18px;
+    width: 14rem;
+}
+
+.expired .btn-expired {
+    width: 8rem;
+    height: 2rem;
+    margin: 1rem 8rem;
+    background-color: burlywood;
+    color: #2b1700;
+    border: none;
+    border-radius: 25px;
+}
+
 
 .countdown {
   display: flex;
@@ -82,11 +99,28 @@
   margin-top: 4rem;
 }
 
-.sale-container .expired{
-  position: absolute;
-  margin-top: 10rem;
-  margin-left: 3rem;
+.currenttime {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 60%;
 }
+
+.currenttime .p1{
+    margin: 3rem 0;
+    font-size: 2rem;
+    color: burlywood;
+}
+
+.p2 {
+  color: rgb(206, 132, 34);
+}
+
+.p2>span {
+      margin: 0 2rem;
+      color: burlywood;
+} 
 
 @media(max-width: 768px) {
   .sale-container{
@@ -130,7 +164,21 @@
     .countdown-item-label{
          margin: 1rem -0.25rem;
     }
-}
+    .currenttime{
+       
+    }
+    .currenttime .p1{
+       font-size: 1.6rem;
+       margin-right: -8rem;
+    }
+    .p2{
+      display: flex;
+      flex-direction: row-reverse;  
+      justify-content: end;
+      position: absolute;
+      width: 100%;
+    }
+  }
 
 @media(max-width:360px){
      .special{
